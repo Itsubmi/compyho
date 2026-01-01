@@ -1,7 +1,4 @@
-const tg = window.Telegram?.WebApp || {
-  expand: () => console.log('tg.expand()'),
-  close: () => console.log('tg.close()')
-};
+const tg = window.Telegram?.WebApp || { expand: ()=>{}, close: ()=>{} };
 tg.expand();
 
 const intro = document.getElementById('intro');
@@ -43,8 +40,6 @@ function toggleInterest(interest, btn) {
     selected.push(interest);
     btn.classList.add('selected');
   }
-
-  // Показываем кнопку "Готово", если выбрано хотя бы одно увлечение
   finishBtn.classList.toggle('hidden', selected.length === 0);
 }
 
@@ -55,6 +50,5 @@ function finish() {
   // tg.close(); // можно закрывать, если нужно
 }
 
-// Глобальные функции для onclick
 window.start = start;
 window.finish = finish;
