@@ -1,4 +1,8 @@
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram?.WebApp || {
+  expand: () => console.log('tg.expand()'),
+  close: () => console.log('tg.close()')
+};
+
 tg.expand();
 
 const intro = document.getElementById('intro');
@@ -7,11 +11,7 @@ const resultScreen = document.getElementById('resultScreen');
 const cardContainer = document.getElementById('cardContainer');
 const likedList = document.getElementById('likedList');
 
-let interests = [
-  'Музыка', 'Спорт', 'Искусство', 'Путешествия', 
-  'Технологии', 'Кулинария', 'Фотография', 'Чтение'
-];
-
+let interests = ['Музыка', 'Спорт', 'Искусство', 'Путешествия', 'Технологии', 'Кулинария', 'Фотография', 'Чтение'];
 let liked = [];
 let currentIndex = 0;
 
@@ -23,10 +23,7 @@ function start() {
 
 function showCard() {
   cardContainer.innerHTML = '';
-  if(currentIndex >= interests.length) {
-    showResult();
-    return;
-  }
+  if (currentIndex >= interests.length) return showResult();
   const card = document.createElement('div');
   card.className = 'card';
   card.textContent = interests[currentIndex];
@@ -54,8 +51,8 @@ function finish() {
   tg.close();
 }
 
+// делаем функции доступными для onclick
 window.start = start;
 window.like = like;
 window.skip = skip;
 window.finish = finish;
-
