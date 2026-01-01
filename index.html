@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1 id="title">Давай найдём то, что ты сейчас хочешь</h1>
+
+    <div id="options" class="hidden">
+      <button onclick="selectOption('A')">Вариант A</button>
+      <button onclick="selectOption('B')">Вариант B</button>
+      <button onclick="selectOption('C')">Вариант C</button>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <button id="startBtn" onclick="start()">Начать</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
