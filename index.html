@@ -9,26 +9,20 @@
 </head>
 <body>
   <div id="app">
-    <!-- Вступительный экран -->
     <div id="intro" class="screen">
-      <h1>Что тебе интересно прямо сейчас?</h1>
+      <h1>Выбери свои увлечения</h1>
       <button onclick="start()">Начать</button>
     </div>
 
-    <!-- Экран карточек (Tinder style) -->
     <div id="cardsScreen" class="screen hidden">
-      <div id="cardContainer"></div>
-      <div class="buttons">
-        <button onclick="skip()">❌</button>
-        <button onclick="like()">❤️</button>
-      </div>
+      <div id="interestsContainer"></div>
+      <button onclick="finish()" id="finishBtn" class="hidden">Готово</button>
     </div>
 
-    <!-- Экран результата -->
     <div id="resultScreen" class="screen hidden">
       <h2>Ты выбрала эти увлечения:</h2>
       <ul id="likedList"></ul>
-      <button onclick="finish()">Готово</button>
+      <button onclick="finish()">Закрыть</button>
     </div>
   </div>
 
