@@ -53,3 +53,9 @@ function showResult() {
 function finish() {
   tg.close();
 }
+
+window.start = start;
+window.like = like;
+window.skip = skip;
+window.finish = finish;
+
